@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Img from "../img/img.png";
-import Attach from "../img/attach.png";
+// import Attach from "../img/attach.png";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 import {
@@ -27,7 +27,7 @@ const Input = () => {
 
       const uploadTask = uploadBytesResumable(storageRef, img);
 
-      uploadTask.on(
+      uploadTask.on('state_changed',  (snapshot) => {},
         (error) => {
           //TODO:Handle Error
         },
@@ -82,7 +82,7 @@ const Input = () => {
         value={text}
       />
       <div className="send">
-        <img src={Attach} alt="" />
+        {/* <img src={Attach} alt="" /> */}
         <input
           type="file"
           style={{ display: "none" }}
